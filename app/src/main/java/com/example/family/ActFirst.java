@@ -11,8 +11,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -119,6 +122,14 @@ public class ActFirst extends Activity {
         super.onStart();
 
         Log.d("ActFirst", "onStart: ");
+
+        LinearLayout layout = new LinearLayout(mContext);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                findViewById(R.id.t4).getLayoutParams());
+        params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        params.setMargins(0, 100, 0, 100);
+        TextView cur = findViewById(R.id.t4);
+        cur.setLayoutParams(params);
     }
     protected void onResume(){
         super.onResume();
