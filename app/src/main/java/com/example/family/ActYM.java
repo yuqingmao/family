@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,6 +26,11 @@ public class ActYM extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_second);
         mContext = this;
         setButton();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
     }
 
     private void setButton() {

@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -42,6 +43,8 @@ public class ActFirst extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Log.d("ActFirst", "onCreate: ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_first);
 
@@ -111,4 +114,38 @@ public class ActFirst extends Activity {
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
+
+    protected void onStart(){
+        super.onStart();
+
+        Log.d("ActFirst", "onStart: ");
+    }
+    protected void onResume(){
+        super.onResume();
+
+        Log.d("ActFirst", "onResume: ");
+    }
+    protected void onPause(){
+        super.onPause();
+
+        Log.d("ActFirst", "onPause: ");
+    }
+    protected void onStop(){
+        super.onStop();
+
+        Log.d("ActFirst", "onStop: ");
+    }
+    protected void onDestroy(){
+        super.onDestroy();
+
+        Log.d("ActFirst", "onDestroy: ");
+    }
+
+    protected void onRestart(){
+        super.onRestart();
+
+        Log.d("ActFirst", "onRestart: ");
+    }
+
+
 }
