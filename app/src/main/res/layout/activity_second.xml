@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center"
+    android:orientation="vertical"
+android:weightSum="1">
+
+<ImageView
+    android:layout_height="300dp"
+    android:layout_width="300dp"
+    android:background="@drawable/ym"
+    android:text="This is activity second"
+    android:textSize="30dp"
+    android:layout_marginBottom="30dp"/>
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="第一个问题，请诚实回答！"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/maobutton"
+        android:textColor="@color/deep_pink"
+        android:text="你觉得他帅吗？"
+        android:layout_marginBottom="40dp"
+        />
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="第二个问题，请摸着良心回答！"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/maobutton2"
+        android:textColor="@color/deep_pink"
+        android:text="你觉得是此人帅还是古天乐帅？"
+        />
+</LinearLayout>

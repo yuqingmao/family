@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/main_t1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="家庭App V1.0"/>
+
+    <TextView
+        android:id="@+id/t4"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="俺们家庭的构成详解："
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/shape_corner1"/>
+
+    <Button
+        android:id="@+id/man1"
+        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:text="一家之主"
+        android:gravity="center"
+        android:background="@drawable/shape_corner2"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick1"/>
+
+    <Button
+        android:id="@+id/man2"
+        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:text="老婆"
+        android:gravity="center"
+        android:background="@drawable/shape_corner2"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick2"/>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cat1"
+            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:text="毛毛雨"
+            android:gravity="center"
+            android:background="@drawable/shape_corner2"
+            android:layout_marginRight="20dp"
+            android:onClick="onClick3"/>
+
+        <Button
+            android:id="@+id/cat2"
+            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:text="小雨"
+            android:gravity="center"
+            android:background="@drawable/shape_corner2"
+            android:layout_marginRight="20dp"
+            android:onClick="onClick4"/>
+
+        <ImageView
+            android:id="@+id/imgchange"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"
+            android:text=""/>
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"
+            android:text="我是暴雨，我爸还是不给我页面，只给我做了个动态图，我爸甚至连比例都懒得调。。。。"/>
+
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/homemap"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:text="毛家地图"
+        android:gravity="center"
+        android:textColor="#1A5246"
+        android:textStyle="bold|italic"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/maplogo"
+        android:onClick="onClickMap"/>
+
+</LinearLayout>
