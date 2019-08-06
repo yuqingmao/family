@@ -123,7 +123,6 @@ public class ActFirst extends Activity {
 
         Log.d("ActFirst", "onStart: ");
 
-        LinearLayout layout = new LinearLayout(mContext);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 findViewById(R.id.t4).getLayoutParams());
         params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
