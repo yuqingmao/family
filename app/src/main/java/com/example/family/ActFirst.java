@@ -47,7 +47,7 @@ public class ActFirst extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Log.d("ActFirst", "onCreate: ");
+        Log.d("data", "onCreate: ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_first);
 
@@ -121,7 +121,7 @@ public class ActFirst extends Activity {
     protected void onStart(){
         super.onStart();
 
-        Log.d("ActFirst", "onStart: ");
+        Log.d("data", "onStart: ");
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 findViewById(R.id.t4).getLayoutParams());
@@ -133,28 +133,28 @@ public class ActFirst extends Activity {
     protected void onResume(){
         super.onResume();
 
-        Log.d("ActFirst", "onResume: ");
+        Log.d("data", "onResume: ");
     }
     protected void onPause(){
         super.onPause();
 
-        Log.d("ActFirst", "onPause: ");
+        Log.d("data", "onPause: ");
     }
     protected void onStop(){
         super.onStop();
 
-        Log.d("ActFirst", "onStop: ");
+        Log.d("data", "onStop: ");
     }
     protected void onDestroy(){
         super.onDestroy();
 
-        Log.d("ActFirst", "onDestroy: ");
+        Log.d("data", "onDestroy: ");
     }
 
     protected void onRestart(){
         super.onRestart();
 
-        Log.d("ActFirst", "onRestart: ");
+        Log.d("data", "onRestart: ");
     }
 
 

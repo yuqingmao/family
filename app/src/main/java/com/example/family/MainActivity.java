@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
+
+        showHW();
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -57,7 +60,13 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(mContext, "我早就说了吧！输入了也没屁用", Toast.LENGTH_LONG).show();
             }
         });
-
     }
 
+    private void showHW(){
+        WindowManager manager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(dm);
+        Toast.makeText(mContext, "当前手机的屏幕宽度以及高度： " + dm.widthPixels + "*" +
+                dm.heightPixels, Toast.LENGTH_LONG).show();
+    }
 }
