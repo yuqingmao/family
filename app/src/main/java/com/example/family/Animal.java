@@ -8,6 +8,7 @@ public class Animal {
     public Animal() {
     }
 
+
     public Animal(String aname
 //            , String aspeak, int aicon
     ) {
