@@ -24,6 +24,7 @@ import java.util.TimerTask;
 public class ActFirst extends Activity {
     int imgstart = 0;
     private Context mContext;
+    private Button bh;
     private Button b1;
     private Button b2;
     private Button b3;
@@ -49,7 +50,12 @@ public class ActFirst extends Activity {
 
         Log.d("data", "onCreate: ");
         super.onCreate(savedInstanceState);
+
+        removeView();
+        addView();
+
         setContentView(R.layout.act_first);
+
 
         imgchange = findViewById(R.id.imgchange);
         new Timer().schedule(new TimerTask() {
@@ -65,12 +71,35 @@ public class ActFirst extends Activity {
         mContext = this;
     }
 
+    private void removeView(){
+        LinearLayout ly = new LinearLayout(this);
+        TextView title = findViewById(R.id.main_t1);
+        ly.removeView(title);
+    }
+
+    private void addView(){
+        LinearLayout ly = new LinearLayout(this);
+        Button btn = new Button(this);
+        btn.setText("JAVA 添加的按钮");
+        ly.addView(btn);
+    }
+
     protected void bindButton() {
+        bh = findViewById(R.id.t4);
         b1 = findViewById(R.id.man1);
         b2 = findViewById(R.id.man2);
         b3 = findViewById(R.id.cat1);
         b4 = findViewById(R.id.cat2);
         b5 = findViewById(R.id.homemap);
+
+        bh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it0 = new Intent();
+                it0.setClassName(mContext, "com.example.family.HomeMembers");
+                startActivity(it0);
+            }
+        });
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override

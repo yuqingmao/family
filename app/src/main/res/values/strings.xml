@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">family</string>
-    <string name="s1">sting1</string>>
+    <string name="s1">sting1</string>
+    <string name="title_activity_home_members">HomeMembers</string>>
 </resources>

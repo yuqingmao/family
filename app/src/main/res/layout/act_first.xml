@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="家庭App V1.0"/>
 
-    <TextView
+    <Button
         android:id="@+id/t4"
         android:layout_width="170dp"
         android:layout_height="50dp"

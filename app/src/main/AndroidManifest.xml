@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".HomeMembers"
+            android:label="@string/title_activity_home_members"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,58 +20,58 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ActFirst"
+        <activity
+            android:name=".ActFirst"
             android:label="ActFirst"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="myActFirst" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ActYM"
+        <activity
+            android:name=".ActYM"
             android:label="ActYM"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="myActYM" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ActFF"
             android:label="ActFF"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="myActFF" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ActC1"
             android:label="ActC1"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="myActC1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ActC2"
             android:label="ActC2"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="myActC2" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".MyService1">
-        </service>
+        <service android:name=".MyService1"></service>
     </application>
 
 </manifest>
