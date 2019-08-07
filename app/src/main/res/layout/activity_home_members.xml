@@ -11,5 +11,11 @@
         android:text="我是xml加载的控件"
         />
 
+    <ListView
+        android:id="@+id/lv1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+
 
 </RelativeLayout>

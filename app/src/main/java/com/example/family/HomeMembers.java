@@ -1,41 +1,31 @@
 package com.example.family;
 
-import android.os.Bundle;
-
-import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
 
 public class HomeMembers extends AppCompatActivity {
+
+    private String[] data = {"香奈儿", "迪奥", "爱马仕", "LV", "劳斯莱斯", "宾利"};
+
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = this;
 
-        setContentView(R.layout.activity_home_members);
+//        setContentView(R.layout.activity_home_members);
 
         //create button
         Button bt1 = new Button(this);
@@ -50,13 +40,27 @@ public class HomeMembers extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(this);
 
         //find layout instance from inflater
-        View cur = inflater.inflate(R.layout.activity_home_members,null);
-//        RelativeLayout rly = cur.findViewById(R.id.homes);
+        View cur = inflater.inflate(R.layout.activity_home_members, null);
+        RelativeLayout rly = cur.findViewById(R.id.homes);
 
-        RelativeLayout rly = findViewById(R.id.homes);
+//        RelativeLayout rly = findViewById(R.id.homes);
         rly.addView(bt1, lp1);
 
-//        setContentView(rly);
+        setContentView(rly);
+        setupLV();
     }
 
+    private void setupLV() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, data);
+        ListView listview = findViewById(R.id.lv1);
+        listview.setAdapter(adapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String cur = data[position];
+                Toast.makeText(mContext, cur+" - OK, 不过买不起！", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
