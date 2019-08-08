@@ -18,6 +18,7 @@ public class ActFF extends Activity {
     private IntentFilter intentFilter;
     private NetworkChangeReceiver ncr;
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
