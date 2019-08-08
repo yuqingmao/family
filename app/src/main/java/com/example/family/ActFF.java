@@ -19,13 +19,14 @@ public class ActFF extends Activity {
     private NetworkChangeReceiver ncr;
 
 
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         mContext = this;
 
+
+//////
         bt = findViewById(R.id.lgqn);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,15 +46,15 @@ public class ActFF extends Activity {
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(ncr);
     }
 
-    class NetworkChangeReceiver extends BroadcastReceiver{
+    class NetworkChangeReceiver extends BroadcastReceiver {
 
         @Override
-        public void onReceive(Context context, Intent intent){
+        public void onReceive(Context context, Intent intent) {
             Toast.makeText(context, "Network change", Toast.LENGTH_LONG).show();
         }
     }
