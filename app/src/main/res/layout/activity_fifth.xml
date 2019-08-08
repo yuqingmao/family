@@ -2,28 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="367dp"
-        android:layout_height="351dp"
-        android:background="@drawable/xiaoyu"
-        android:text="This is activity second"
-        android:textSize="30dp" />
+    <fragment
+        android:id="@+id/frag1"
+        android:name="com.example.family.fragment.LeftFrag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </fragment>
 
 
-    <TextView
-        android:id="@+id/t5"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:layout_marginTop="50dp"
-        android:textSize="30sp"
-        android:singleLine = "false"
-        android:text="如果你要问暴雨怎么不见了？  暴雨在床底下，找不到了！"
-        />
+    <fragment
+        android:id="@+id/frag2"
+        android:name="com.example.family.fragment.RightFrag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </fragment>
+
+
+    <!--<ImageView-->
+        <!--android:layout_width="367dp"-->
+        <!--android:layout_height="351dp"-->
+        <!--android:background="@drawable/xiaoyu"-->
+        <!--android:text="This is activity dassecond"-->
+        <!--android:textSize="30dp" />-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/t5"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="left"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:textSize="30sp"-->
+        <!--android:singleLine = "false"-->
+        <!--android:text="如果你要问暴雨怎么不见了？  暴雨在床底下，找不到了！"-->
+        <!--/>-->
 
 
 </LinearLayout>

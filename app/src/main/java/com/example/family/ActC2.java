@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
 
 
 public class ActC2 extends Activity {
@@ -17,8 +19,8 @@ public class ActC2 extends Activity {
         Intent intent = getIntent();
         weight = intent.getIntExtra("lb", 0);
 
-        TextView tv = findViewById(R.id.t5);
-        tv.setText("这货的体重为：" + weight + " 斤");
+//        TextView tv = findViewById(R.id.t5);
+//        tv.setText("这货的体重为：" + weight + " 斤");
 
     }
 }
