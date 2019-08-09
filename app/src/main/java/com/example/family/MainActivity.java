@@ -1,11 +1,9 @@
 package com.example.family;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     Context mContext;
-    private Button bt0;
+    private Button bt1;
+    private Button bt2;
+    private EditText un;
+    private EditText pw;
+    String name = new String();
+    String pass = new String();
+    String DBname = new String();
+    String DBpass = new String();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,42 +32,68 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mContext = this;
 
+        un = findViewById(R.id.et_user_name);
+        pw = findViewById(R.id.et_password);
+
         showHW();
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        bt0 = findViewById(R.id.but1);
-        bt0.setOnClickListener(new View.OnClickListener() {
+        bt1 = findViewById(R.id.but1);
+        bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it4 = new Intent();
-                it4.setClass(mContext, ActFirst.class);
-                startActivity(it4);
+                getInfo();
+                getDBInfo();
+                boolean correct = compare();
+
+                if (correct) {
+                    Intent it1 = new Intent();
+                    it1.setClass(mContext, ActFirst.class);
+                    startActivity(it1);
+                } else {
+                    Toast.makeText(mContext, "用户名或者密码不正确", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
-        EditText et = findViewById(R.id.et_user_name);
-        et.addTextChangedListener(new TextWatcher() {
+        bt2 = findViewById(R.id.but2);
+        bt2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                Toast.makeText(mContext, "您还未输入个人信息", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                Toast.makeText(mContext, "其实您输入了也没屁用", Toast.LENGTH_LONG).show();
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-//                Toast.makeText(mContext, "我早就说了吧！输入了也没屁用", Toast.LENGTH_LONG).show();
+            public void onClick(View view) {
+                Intent it2 = new Intent();
+                it2.setClass(mContext, Register.class);
+                startActivity(it2);
             }
         });
     }
 
-    private void showHW(){
+    private void getInfo() {
+        name = un.getText().toString();
+        pass = pw.getText().toString();
+        Log.d("test", "name is:" + name);
+        Log.d("test", "pass is:" + pass);
+    }
+
+    private void getDBInfo() {
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        DBname = pref.getString("NAME", "");
+        DBpass = pref.getString("PASS", "");
+
+        Log.d("test", "DBname is:" + DBname);
+        Log.d("test", "DBpass is:" + DBpass);
+    }
+
+    private boolean compare() {
+        boolean ret = false;
+        if (name.equals(DBname) && pass.equals(DBpass)) ret = true;
+        Log.d("test", "correct:" + ret);
+        return ret;
+    }
+
+
+    private void showHW() {
         WindowManager manager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         manager.getDefaultDisplay().getMetrics(dm);

@@ -20,6 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Register"
+            android:label="Register"></activity>
+
         <activity
             android:name=".ActFirst"
             android:label="ActFirst"
