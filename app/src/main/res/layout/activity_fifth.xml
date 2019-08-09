@@ -4,30 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/frag1"
-        android:name="com.example.family.fragment.LeftFrag"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </fragment>
 
-
-    <fragment
-        android:id="@+id/frag2"
-        android:name="com.example.family.fragment.RightFrag"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </fragment>
-
-
-    <!--<ImageView-->
-        <!--android:layout_width="367dp"-->
-        <!--android:layout_height="351dp"-->
-        <!--android:background="@drawable/xiaoyu"-->
-        <!--android:text="This is activity dassecond"-->
-        <!--android:textSize="30dp" />-->
+    <ImageView
+        android:layout_width="367dp"
+        android:layout_height="351dp"
+        android:background="@drawable/xiaoyu"
+        android:text="This is activity dassecond"
+        android:textSize="30dp" />
 
 
     <!--<TextView-->

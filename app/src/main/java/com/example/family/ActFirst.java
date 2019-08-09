@@ -132,9 +132,7 @@ public class ActFirst extends Activity {
             @Override
             public void onClick(View view) {
                 Intent it4 = new Intent();
-                it4.setClass(mContext, ActC2.class);
-
-                it4.putExtra("lb", 33);
+                it4.setClassName(mContext, "com.example.family.ActC2");
                 startActivity(it4);
             }
         });
