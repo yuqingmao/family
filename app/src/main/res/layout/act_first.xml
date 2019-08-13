@@ -17,11 +17,11 @@
 
     <Button
         android:id="@+id/t4"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:gravity="center"
-        android:text="俺们家庭的构成详解："
+        android:text="家庭数据库"
         android:layout_marginVertical="10dp"
         android:background="@drawable/shape_corner1"/>
 

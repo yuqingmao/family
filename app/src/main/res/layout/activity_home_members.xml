@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:text="新建数据库"
         android:layout_centerHorizontal="true"
-        android:layout_margin="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView
@@ -60,8 +61,35 @@
         android:text="添加到数据库"
         android:layout_below="@id/dbll1"
         android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
+        android:layout_margin="0dp"
         />
 
+    <TextView
+        android:id="@+id/dbt5"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_below="@id/mbt2"
+        android:layout_centerHorizontal="true"
+        android:text="请填写需要删除成员： ">
+    </TextView>
+    <EditText
+        android:id="@+id/dbet4"
+        android:layout_below="@id/dbt5"
+        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_centerHorizontal="true"
+        android:hint="姓名">
+    </EditText>
+
+    <Button
+        android:id="@+id/mbt3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="从数据库删除"
+        android:layout_below="@id/dbet4"
+        android:layout_alignParentRight="true"
+        android:layout_margin="0dp"
+        />
 
 </RelativeLayout>

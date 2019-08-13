@@ -19,9 +19,11 @@ public class HomeMembers extends AppCompatActivity {
 
     private Button bt1;
     private Button bt2;
+    private Button bt3;
     private EditText con1;
     private EditText con2;
     private EditText con3;
+    private EditText con4;
     private Context mContext;
     private MyDatabaseHelper dbHelper;
 
@@ -32,6 +34,7 @@ public class HomeMembers extends AppCompatActivity {
         setContentView(R.layout.activity_home_members);
 
         addMemberToDataBase();
+        deleteMemberToDataBase();
     }
 
     @Override
@@ -57,7 +60,6 @@ public class HomeMembers extends AppCompatActivity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbHelper.getWritableDatabase();
                 String info1 = con1.getText().toString();
                 String info2 = con2.getText().toString();
                 String info3 = con3.getText().toString();
@@ -72,6 +74,23 @@ public class HomeMembers extends AppCompatActivity {
                 values.clear();
                 Toast.makeText(mContext, "Added new item to Database successfully!"
                 , Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    private void deleteMemberToDataBase(){
+        dbHelper = new MyDatabaseHelper(mContext, "FamilyDB.db", null, 4);
+        con4 = findViewById(R.id.dbet4);
+        bt3 = findViewById(R.id.mbt3);
+
+        bt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.delete("Member", "name = ?", new String[]{con4.getText().toString()});
+                Toast.makeText(mContext, "Deleted selected item from Database!"
+                    , Toast.LENGTH_SHORT).show();
             }
         });
     }
