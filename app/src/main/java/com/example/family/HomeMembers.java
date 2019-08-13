@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.family.SQL.MyDatabaseHelper;
@@ -30,20 +31,29 @@ public class HomeMembers extends AppCompatActivity {
         mContext = this;
         setContentView(R.layout.activity_home_members);
 
+        addMemberToDataBase();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+    }
+
+    private void addMemberToDataBase(){
         dbHelper = new MyDatabaseHelper(mContext, "FamilyDB.db", null, 4);
         con1 = findViewById(R.id.dbet1);
         con2 = findViewById(R.id.dbet2);
         con3 = findViewById(R.id.dbet3);
-
         bt1 = findViewById(R.id.mbt1);
+        bt2 = findViewById(R.id.mbt2);
+
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dbHelper.getWritableDatabase();
             }
         });
-
-        bt2 = findViewById(R.id.mbt2);
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,9 +70,10 @@ public class HomeMembers extends AppCompatActivity {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 db.insert("Member", null, values);
                 values.clear();
+                Toast.makeText(mContext, "Added new item to Database successfully!"
+                , Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
 }

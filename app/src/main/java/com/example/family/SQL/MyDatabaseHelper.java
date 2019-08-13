@@ -24,12 +24,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_KEY);
-        Toast.makeText(mContext, "Created successfully", Toast.LENGTH_LONG).show();
+        Toast.makeText(mContext, "Created DB successfully", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists Member");
+        db.execSQL("drop table if exists Member.db");
+        db.execSQL("drop table if exists Familys.db");
         onCreate(db);
+
+        Toast.makeText(mContext, "Upgrade DB successfully", Toast.LENGTH_LONG).show();
     }
 }
