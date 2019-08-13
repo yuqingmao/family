@@ -10,9 +10,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public static String CREATE_KEY = "create table Member ("
             + "id integer primary key autoincrement, "
-            + "Location text, "
-            + "Age integer, "
-            + "Rank text)";
+            + "name text, "
+            + "location text, "
+            + "gender text)";
     private Context mContext;
 
     public MyDatabaseHelper(Context context, String name,
@@ -29,5 +29,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("drop table if exists Member");
+        onCreate(db);
     }
 }

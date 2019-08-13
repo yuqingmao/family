@@ -4,17 +4,63 @@
     android:layout_height="match_parent"
     android:id="@+id/homes"
     >
-    <TextView
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/mbt1"
         android:layout_height="wrap_content"
-        android:id="@+id/thome"
-        android:text="我是xml加载的控件"
+        android:layout_width="wrap_content"
+        android:text="新建数据库"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
         />
 
-    <ListView
-        android:id="@+id/lv1"
+    <TextView
+        android:id="@+id/dbt1"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_below="@id/mbt1"
+        android:layout_centerHorizontal="true"
+        android:text="请填写新增加成员信息： ">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/dbll1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/dbt1"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+        <EditText
+            android:id="@+id/dbet1"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:hint="姓名">
+        </EditText>
+        <EditText
+            android:id="@+id/dbet2"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="地址">
+        </EditText>
+        <EditText
+            android:id="@+id/dbet3"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:hint="性别">
+        </EditText>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/mbt2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="添加到数据库"
+        android:layout_below="@id/dbll1"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
         />
 
 
