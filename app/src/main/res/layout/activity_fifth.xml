@@ -8,14 +8,12 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="351dp"
-        android:background="@drawable/xiaoyu"
-        android:text="@string/this_is_activity_dassecond"
-        android:textSize="30sp" />
+        android:background="@drawable/xiaoyu"/>
 
     <WebView
         android:id="@+id/wv1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="20dp"
         />
 
