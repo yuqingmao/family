@@ -207,11 +207,6 @@ public class ActFirst extends Activity {
                 Log.d("Test", "getContacts: " + cName);
                 Log.d("Test", "getNumber: " + cNum);
             }
-            ContentValues values = new ContentValues();
-            values.put(Phone.DISPLAY_NAME, "addedContact");
-            values.put(Phone.NUMBER, "1234567890");
-            getContentResolver().update(uri, values, "display_name = ? and data1 = ?"
-            , new String[]{"text", "1"});
             cursor.close();
         }
     }
