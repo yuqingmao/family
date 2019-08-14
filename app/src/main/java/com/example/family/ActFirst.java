@@ -1,14 +1,19 @@
 package com.example.family;
 
 
+import android.Manifest.permission;
 import android.app.Activity;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +21,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -44,12 +50,13 @@ public class ActFirst extends Activity {
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         Log.d("data", "onCreate: ");
         super.onCreate(savedInstanceState);
+        mContext = this;
+        getContacts();
 
         removeView();
         addView();
@@ -67,8 +74,6 @@ public class ActFirst extends Activity {
         }, 0, 600);
 
         bindButton();
-
-        mContext = this;
     }
 
     private void removeView(){
@@ -184,5 +189,28 @@ public class ActFirst extends Activity {
         Log.d("data", "onRestart: ");
     }
 
+    public void getContacts() {
+        ContentResolver resolver = mContext.getContentResolver();
+        Uri uri = Phone.CONTENT_URI;
+        if (ContextCompat.checkSelfPermission(mContext, permission.READ_CONTACTS)
+            != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(ActFirst.this,
+                new String[]{permission.READ_CONTACTS}, 1);
+        } else {
+            Cursor cursor = resolver.query(uri, null, null, null, null);
+            while (cursor.moveToNext()) {
+                String cName = cursor.getString(cursor.getColumnIndex(Phone.DISPLAY_NAME));
+                String cNum = cursor.getString(cursor.getColumnIndex(Phone.NUMBER));
+                Log.d("Test", "getContacts: " + cName);
+                Log.d("Test", "getNumber: " + cNum);
+            }
+            cursor.close();
+        }
+    }
+
+    // @Override
+    // public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults){
+    //
+    // }
 
 }
