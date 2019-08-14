@@ -5,6 +5,7 @@ import android.Manifest.permission;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -192,10 +193,12 @@ public class ActFirst extends Activity {
     public void getContacts() {
         ContentResolver resolver = mContext.getContentResolver();
         Uri uri = Phone.CONTENT_URI;
-        if (ContextCompat.checkSelfPermission(mContext, permission.READ_CONTACTS)
-            != PackageManager.PERMISSION_GRANTED) {
+        if ((ContextCompat.checkSelfPermission(mContext, permission.READ_CONTACTS)
+            != PackageManager.PERMISSION_GRANTED) ||
+            (ContextCompat.checkSelfPermission(mContext, permission.WRITE_CONTACTS)
+            != PackageManager.PERMISSION_GRANTED)) {
             ActivityCompat.requestPermissions(ActFirst.this,
-                new String[]{permission.READ_CONTACTS}, 1);
+                new String[]{permission.READ_CONTACTS, permission.WRITE_CONTACTS}, 1);
         } else {
             Cursor cursor = resolver.query(uri, null, null, null, null);
             while (cursor.moveToNext()) {
@@ -204,13 +207,12 @@ public class ActFirst extends Activity {
                 Log.d("Test", "getContacts: " + cName);
                 Log.d("Test", "getNumber: " + cNum);
             }
+            ContentValues values = new ContentValues();
+            values.put(Phone.DISPLAY_NAME, "addedContact");
+            values.put(Phone.NUMBER, "1234567890");
+            getContentResolver().update(uri, values, "display_name = ? and data1 = ?"
+            , new String[]{"text", "1"});
             cursor.close();
         }
     }
-
-    // @Override
-    // public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults){
-    //
-    // }
-
 }
