@@ -6,23 +6,18 @@
 
 
     <ImageView
-        android:layout_width="367dp"
+        android:layout_width="match_parent"
         android:layout_height="351dp"
         android:background="@drawable/xiaoyu"
-        android:text="This is activity dassecond"
-        android:textSize="30dp" />
+        android:text="@string/this_is_activity_dassecond"
+        android:textSize="30sp" />
 
-
-    <!--<TextView-->
-        <!--android:id="@+id/t5"-->
-        <!--android:layout_width="300dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:gravity="left"-->
-        <!--android:layout_marginTop="50dp"-->
-        <!--android:textSize="30sp"-->
-        <!--android:singleLine = "false"-->
-        <!--android:text="如果你要问暴雨怎么不见了？  暴雨在床底下，找不到了！"-->
-        <!--/>-->
+    <WebView
+        android:id="@+id/wv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        />
 
 
 </LinearLayout>

@@ -2,11 +2,9 @@ package com.example.family;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.view.View;
-import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -23,25 +21,31 @@ public class ActC2 extends Activity {
         setContentView(R.layout.activity_fifth);
 
         savefile();
+        webviewPlay();
     }
-    private void savefile(){
+
+    private void webviewPlay() {
+        WebView wb1 = findViewById(R.id.wv1);
+        wb1.getSettings().setJavaScriptEnabled(true);
+        wb1.setWebViewClient(new WebViewClient());
+        wb1.loadUrl("http://www.google.com");
+    }
+
+    private void savefile() {
         String data = "Maomaoyu love xiaoyu " +
                 "";
         FileOutputStream out;
         BufferedWriter writer = null;
-        try{
+        try {
             out = openFileOutput("data", Context.MODE_PRIVATE);
             writer = new BufferedWriter(new OutputStreamWriter(out));
             writer.write(data);
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally{
+        } finally {
             try {
                 if (writer != null) writer.close();
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
