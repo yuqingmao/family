@@ -1,6 +1,7 @@
 package com.example.family;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -22,6 +23,8 @@ import java.net.URL;
 public class ActC2 extends AppCompatActivity implements View.OnClickListener {
 
   private Button bt1;
+  private Button bt2;
+  private Button bt3;
   private TextView responseText;
 
   @Override
@@ -29,7 +32,11 @@ public class ActC2 extends AppCompatActivity implements View.OnClickListener {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_fifth);
     bt1 = findViewById(R.id.fifthbutton1);
+    bt2 = findViewById(R.id.fifthbutton2);
+    bt3 = findViewById(R.id.fifthbutton3);
     bt1.setOnClickListener(this);
+    bt2.setOnClickListener(this);
+    bt3.setOnClickListener(this);
     responseText = findViewById(R.id.fifthtext1);
 
     savefile();
@@ -67,8 +74,20 @@ public class ActC2 extends AppCompatActivity implements View.OnClickListener {
 
   @Override
   public void onClick(View view) {
-    if (view.getId() == R.id.fifthbutton1) {
-      sendRequestWithHttpURLConnection();
+    switch (view.getId()) {
+      case R.id.fifthbutton1:
+        sendRequestWithHttpURLConnection();
+        break;
+      case R.id.fifthbutton2:
+        Intent startintent = new Intent(this, MyService1.class);
+        startService(startintent);
+        break;
+      case R.id.fifthbutton3:
+        Intent stopintent = new Intent(this, MyService1.class);
+        stopService(stopintent);
+        break;
+      default:
+        break;
     }
   }
 
