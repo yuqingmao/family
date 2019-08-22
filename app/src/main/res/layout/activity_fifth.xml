@@ -5,10 +5,11 @@
     android:orientation="vertical">
 
 
-    <ImageView
+    <Button
+        android:id="@+id/button2"
         android:layout_width="match_parent"
-        android:layout_height="351dp"
-        android:background="@drawable/xiaoyu"/>
+        android:layout_height="wrap_content"
+        android:text="毛毛雨坏东西" />
 
     <WebView
         android:id="@+id/wv1"
