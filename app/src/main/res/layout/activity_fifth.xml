@@ -6,28 +6,10 @@
 
 
     <Button
-<<<<<<< HEAD
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="毛毛雨坏东西" />
-=======
-        android:id="@+id/fifthbutton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Grap Web Text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="427dp"
-        >
-        <TextView
-            android:id="@+id/fifthtext1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="TextView"/>
-    </ScrollView>
->>>>>>> 14e019b81e8b85496dbcd63be03792b4d1e014f7
 
     <LinearLayout
         android:layout_width="match_parent"
